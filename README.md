@@ -97,3 +97,17 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+
+
+### STUDY
+
+
+PRA RODAR O DEBUG DO NEST
+A cor em amarelo encontrada em nosso terminal é a classe hospedeira da dependência
+a de azul e o nome da dependencia do injection token
+a roxa e o modulo que foi procurado
+
+```bash
+NEST_DEBUG=true pnpm run start:dev
+```
+![img.png](img.png)

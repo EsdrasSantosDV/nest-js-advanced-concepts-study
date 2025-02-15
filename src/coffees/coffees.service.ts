@@ -1,9 +1,21 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateCoffeeDto } from './dto/create-coffee.dto';
 import { UpdateCoffeeDto } from './dto/update-coffee.dto';
+import { Coffee } from './entities/coffee.entity';
+
+
+export interface CoffeesDataSource {
+  [index: number]: Coffee;
+}
 
 @Injectable()
 export class CoffeesService {
+  //TYPESCRIPT NÃO DEIXA NENHUM METADADO SOBRE INTERFFACES
+  //TODA INTERFACE E REPRESADA COMO UM OBJETO QUANDO FOR TRASNPILAR
+  //POR ISSO QUE NAO DA PRA USAR INTERFACES COMO PROVIDERS TOKEN
+  //vamos injetar no nosso serviço o CoffeesDataSource
+  constructor(dataSource: CoffeesDataSource
+  ) {}
   create(createCoffeeDto: CreateCoffeeDto) {
     return 'This action adds a new coffee';
   }

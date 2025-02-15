@@ -111,3 +111,17 @@ a roxa e o modulo que foi procurado
 NEST_DEBUG=true pnpm run start:dev
 ```
 ![img.png](img.png)
+
+
+//pra verficiar depenndeica circular
+
+```bash
+npx madge dist/main.js --circular
+```
+![img_1.png](img_1.png)
+
+
+```bash
+npx madge dist/main.js --image graph.png
+```
+

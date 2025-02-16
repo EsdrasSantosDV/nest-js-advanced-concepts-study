@@ -38,6 +38,7 @@ export class IntervalScheduler
 
       const methodKeys = this.metadataScanner.getAllMethodNames(prototype);
       methodKeys.forEach((methodKey) => {
+        console.log('methodKey', methodKey);
         const interval = this.reflector.get(INTERVAL_KEY, instance[methodKey]);
         if (interval === undefined) {
           return;

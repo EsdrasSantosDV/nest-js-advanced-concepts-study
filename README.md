@@ -125,3 +125,14 @@ npx madge dist/main.js --circular
 npx madge dist/main.js --image graph.png
 ```
 
+
+//PRA skipar o module
+```bash
+// ⚙️ Generate a new "rewards" module:
+nest g mo rewards --skip-import
+// ⚙️ Generate a single RewardsService within that module:
+nest g s rewards/rewards --skip-import
+```
+
+![img_2.png](img_2.png)
+

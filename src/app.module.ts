@@ -7,9 +7,10 @@ import { FibonacciModule } from './fibonacci/fibonacci.module';
 import { DataSourceModule } from './data-source/data-source.module';
 import { UsersModule } from './users/users.module';
 import { ContextIdFactory } from '@nestjs/core';
-import { AggregateByTenantContentIdStrategy } from './core/aggregate-by-tenant.strategy';
+import { I18nModule } from './i18n/i18n.module';
+import { AggregateByLocaleContextIdStrategy } from './core/aggregate-by-locallly.strategy';
 //PRECISMAOS COLOCAR A ESTRATÉGIA DE AGREGAÇÃO NO CONTEXTO
-ContextIdFactory.apply(new AggregateByTenantContentIdStrategy());
+ContextIdFactory.apply(new AggregateByLocaleContextIdStrategy());
 @Module({
   imports: [
     CoffeesModule,
@@ -17,6 +18,7 @@ ContextIdFactory.apply(new AggregateByTenantContentIdStrategy());
     FibonacciModule,
     DataSourceModule,
     UsersModule,
+    I18nModule,
   ],
   controllers: [AppController],
   providers: [AppService],
